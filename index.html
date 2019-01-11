@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="https://getbootstrap.com/favicon.ico">
 
-    <title>Cover Template for Bootstrap</title>
+    <title>SocialCraft</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./index_files/bootstrap.min.css" rel="stylesheet">
@@ -16,43 +16,80 @@
     <link href="./index_files/cover.css" rel="stylesheet">
   </head>
 
-  <body class="text-center" data-gr-c-s-loaded="true">
-
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <h3 class="masthead-brand">Cover</h3>
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="https://getbootstrap.com/docs/4.0/examples/cover/#">Home</a>
-            <a class="nav-link" href="https://getbootstrap.com/docs/4.0/examples/cover/#">Features</a>
-            <a class="nav-link" href="https://getbootstrap.com/docs/4.0/examples/cover/#">Contact</a>
-          </nav>
-        </div>
-      </header>
-
-      <main role="main" class="inner cover">
-        <h1 class="cover-heading">Cover your page.</h1>
-        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-        <p class="lead">
-          <a href="https://getbootstrap.com/docs/4.0/examples/cover/#" class="btn btn-lg btn-secondary">Learn more</a>
-        </p>
-      </main>
-
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-        </div>
-      </footer>
+  <body class="text-center background-hero" data-gr-c-s-loaded="true">
+    <div class="overlay">
+        <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto">
+              <div class="inner">
+                <h3 class="masthead-brand">SocialCraft</h3>
+                <!---
+                <nav class="nav nav-masthead justify-content-center">
+                  <a class="nav-link active" href="https://getbootstrap.com/docs/4.0/examples/cover/#">Home</a>
+                  <a class="nav-link" href="https://getbootstrap.com/docs/4.0/examples/cover/#">Features</a>
+                  <a class="nav-link" href="https://getbootstrap.com/docs/4.0/examples/cover/#">Contact</a>
+                </nav>-->
+              </div>
+            </header>
+      
+            <main role="main" class="inner cover">
+              <h1 class="display-3 pb-1">Coming Soon&trade;</h1>
+              <p id="players"class="lead pb-4" style="text-shadow: 1px 4px 8 px rgba(0, 0, 0, 0.438)"></p>
+              <p class="lead">
+                <a href="https://discord.gg/v63y6rW" class="btn btn-lg btn-secondary">Join Discord</a>
+              </p>
+            </main>
+      
+            <footer class="mastfoot mt-auto">
+              <div class="inner">
+              </div>
+            </footer>
+          </div>
     </div>
+
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./index_files/jquery-3.2.1.slim.min.js.download" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="./index_files/popper.min.js.download"></script>
-    <script src="./index_files/bootstrap.min.js.download"></script>
+    <script src="./index_files/popper.min.js"></script>
+    <script src="./index_files/bootstrap.min.js"></script>
+    <script>
+      $(document).ready( function() {
+        $.ajax({
+          url: "https://mcapi.us/server/status?ip=mc-sc.us&port=25565",
+          async: true,
+          success: data => {
+            if(data.status === "success"){
+              console.log(data);
+              let count = data.players.now;
+              let grammar = "";
+
+              if(count > 1)
+              {
+               grammar = count + " players online.";
+              }
+
+              if(count === 0)
+              {
+               grammar = "No one is online.";
+              }
+              
+              
+              if(count === 1)
+              {
+               grammar = count + " player online";
+              }
+              
+
+              document.getElementById("players").innerText = grammar;
+            }
+          }
+
+        })
+      });
+    </script>
   
 
 </body></html>

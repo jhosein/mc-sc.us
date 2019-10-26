@@ -1,97 +1,101 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.0/examples/cover/ -->
-<html lang="en" class="gr__getbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+<html lang="en" class="gr__getbootstrap_com">
 
-    <title>SocialCraft</title>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <!-- Bootstrap core CSS -->
-    <link href="./index_files/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="https://getbootstrap.com/favicon.ico">
 
-    <!-- Custom styles for this template -->
-    <link href="./index_files/cover.css" rel="stylesheet">
-  </head>
+  <title>SocialCraft</title>
 
-  <body class="text-center background-hero" data-gr-c-s-loaded="true">
-    <div class="overlay">
-        <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-            <header class="masthead mb-auto">
-              <div class="inner">
-                <h3 class="masthead-brand">SocialCraft <p id="players"class="lead pb-4" style="text-shadow: 1px 4px 8 px rgba(0, 0, 0, 0.438)"></p></h3>
-                <!---
+  <!-- Bootstrap core CSS -->
+  <link href="./index_files/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="./index_files/cover.css" rel="stylesheet">
+</head>
+
+<body class="text-center background-hero" data-gr-c-s-loaded="true">
+  <div class="overlay">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">SocialCraft <p id="players" class="lead pb-4"
+              style="text-shadow: 1px 4px 8 px rgba(0, 0, 0, 0.438)"></p>
+          </h3>
+          <!---
                 <nav class="nav nav-masthead justify-content-center">
                   <a class="nav-link active" href="https://getbootstrap.com/docs/4.0/examples/cover/#">Home</a>
                   <a class="nav-link" href="https://getbootstrap.com/docs/4.0/examples/cover/#">Features</a>
                   <a class="nav-link" href="https://getbootstrap.com/docs/4.0/examples/cover/#">Contact</a>
                 </nav>-->
-              </div>
-            </header>
-      
-            <main role="main" class="inner cover">
-              <h1 class="display-3 pb-1">Thank you.</h1>
-              <p>SocialCraft is proud to be one of the first servers dedicated to socializing and making friends. Thank you to everyone who contributed to our small, but very special, corner of Minecraft.</p>
-            </main>
-      
-            <footer class="mastfoot mt-auto">
-              <div class="inner">
-                  <iframe src="https://discordapp.com/widget?id=533362690589196288&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-                  <p class="lead mt-3">
-                      <a href="https://discord.gg/v63y6rW" class="btn btn-lg btn-secondary">Join Discord</a>
-                    </p>
-              </div>
-            </footer>
-          </div>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="display-3 pb-1">Thank you.</h1>
+        <p>SocialCraft is proud to be one of the first servers dedicated to socializing and making friends. Thank you to
+          everyone who contributed to our small, but very special, corner of Minecraft.</p>
+      </main>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <iframe src="https://discordapp.com/widget?id=533362690589196288&theme=dark" width="350" height="500"
+            allowtransparency="true" frameborder="0"></iframe>
+          <p class="lead mt-3">
+            <a href="https://discord.gg/v63y6rW" class="btn btn-lg btn-secondary">Join Discord</a>
+          </p>
+        </div>
+      </footer>
     </div>
+  </div>
 
 
 
 
-    <!-- Bootstrap core JavaScript
+  <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="./index_files/popper.min.js"></script>
-    <script src="./index_files/bootstrap.min.js"></script>
-    <script>
-      $(document).ready( function() {
-        $.ajax({
-          url: "https://mcapi.us/server/status?ip=mc-sc.us&port=25565",
-          async: true,
-          success: data => {
-            if(data.status === "success"){
-              console.log(data);
-              let count = data.players.now;
-              let grammar = "";
-
-              if(count > 1)
-              {
-               grammar = count + " players online.";
-              }
-
-              if(count === 0)
-              {
-               grammar = "No one is online.";
-              }
-              
-              
-              if(count === 1)
-              {
-               grammar = count + " player online";
-              }
-              
-
-              document.getElementById("players").innerText = grammar;
-            }
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="./index_files/popper.min.js"></script>
+  <script src="./index_files/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "https://mcapi.us/server/status?ip=mc-sc.us&port=25565",
+        async: true,
+        success: data => {
+          if (data.status !== "success") {
+            console.log(data);
+            return;
           }
 
-        })
-      });
-    </script>
-  
+          let count = data.players.now;
+          let grammar = "";
 
-</body></html>
+          if (count > 1) 
+            grammar = count + " players online.";
+
+          if (count === 0) 
+            grammar = "No one is online.";
+          
+          if (count === 1) 
+            grammar = count + " player online.";
+      
+          document.getElementById("players").innerText = grammar;
+        }
+
+
+      })
+    });
+  </script>
+
+
+</body>
+
+</html>
